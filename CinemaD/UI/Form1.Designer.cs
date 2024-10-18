@@ -58,12 +58,12 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(7, 11);
+            this.panel1.Location = new System.Drawing.Point(16, 62);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(629, 87);
@@ -71,8 +71,8 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -86,7 +86,7 @@
             // pnGhe
             // 
             this.pnGhe.BackColor = System.Drawing.Color.Yellow;
-            this.pnGhe.Location = new System.Drawing.Point(8, 102);
+            this.pnGhe.Location = new System.Drawing.Point(17, 153);
             this.pnGhe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnGhe.Name = "pnGhe";
             this.pnGhe.Size = new System.Drawing.Size(628, 255);
@@ -96,7 +96,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 385);
+            this.label2.Location = new System.Drawing.Point(36, 436);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 29);
             this.label2.TabIndex = 2;
@@ -105,7 +105,7 @@
             // txtTongTien
             // 
             this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTongTien.Location = new System.Drawing.Point(179, 385);
+            this.txtTongTien.Location = new System.Drawing.Point(188, 436);
             this.txtTongTien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
@@ -114,7 +114,7 @@
             // 
             // btnDatVe
             // 
-            this.btnDatVe.Location = new System.Drawing.Point(393, 387);
+            this.btnDatVe.Location = new System.Drawing.Point(402, 438);
             this.btnDatVe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDatVe.Name = "btnDatVe";
             this.btnDatVe.Size = new System.Drawing.Size(86, 35);
@@ -125,7 +125,7 @@
             // 
             // BtnHuy
             // 
-            this.BtnHuy.Location = new System.Drawing.Point(485, 386);
+            this.BtnHuy.Location = new System.Drawing.Point(494, 437);
             this.BtnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnHuy.Name = "BtnHuy";
             this.BtnHuy.Size = new System.Drawing.Size(86, 35);
