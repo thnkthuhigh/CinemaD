@@ -203,7 +203,7 @@ namespace CinemaD
                 KhoiTaoGhe();
                 RecalculateTotal();
 
-                //InHoaDon(datVe.MaVe);
+                ShowTicketReport(datVe.MaVe);
 
             }
             catch (Exception ex)
@@ -211,42 +211,40 @@ namespace CinemaD
                 MessageBox.Show($"Có lỗi xảy ra: {ex.Message}");
             }
         }
+        private void ShowTicketReport(int maVe)
+        {
+            try
+            {
+                var datVe = datVeBLL.GetDatVeById(maVe);
+                if (datVe == null)
+                {
+                    MessageBox.Show("Không tìm thấy thông tin vé.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-        //private void InHoaDon(int maVe)
-        //{
-        //    try
-        //    {
-        //        var datVe = datVeBLL.GetDatVeById(maVe);
-        //        if (datVe == null)
-        //        {
-        //            MessageBox.Show("Không tìm thấy thông tin vé.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //            return;
-        //        }
+                var reportData = new TicketReportData
+                {
+                    TenKhachHang = datVe.KhachHang.TenKH,
+                    TongTien = datVe.TongTien,
+                    NgayBan = datVe.NgayMua,
+                    DanhSachGhe = datVe.ChonGhe.Select(cg => new SeatInfo
+                    {
+                        SoGhe = cg.SoGhe,
+                        GiaTien = cg.GiaTien ?? 0
+                    }).ToList()
+                };
 
-        //        var reportData = new TicketReportData
-        //        {
-        //            TenKhachHang = datVe.KhachHang.TenKH,
-        //            TongTien = datVe.TongTien,
-        //            NgayBan = datVe.NgayMua,
-        //            DanhSachGhe = datVe.ChonGhe.Select(cg => new SeatInfo
-        //            {
-        //                SoGhe = cg.SoGhe,
-        //                GiaTien = cg.GiaTien ?? 0
-        //            }).ToList()
-        //        };
-
-        //        // Tạo form mới để hiển thị report
-        //        using (var reportForm = new ReportForm())
-        //        {
-        //            reportForm.SetReportData(reportData);
-        //            reportForm.ShowDialog();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Có lỗi xảy ra khi in hóa đơn: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
+                using (var reportForm = new ReportForm())
+                {
+                    reportForm.SetReportData(reportData);
+                    reportForm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra khi hiển thị báo cáo: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void LoadTicketInformation()
         {
