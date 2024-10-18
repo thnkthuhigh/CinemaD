@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CinemaD.DTO
+﻿public class ChonGheDTO
 {
-    internal class ChonGheDTO
-    {
-    }
+    public int MaVe { get; set; }
+    public int SoGhe { get; set; }
+    public decimal? GiaTien { get; set; }
+
 }

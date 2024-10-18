@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System;
 
-namespace CinemaD.DTO
+public class DatVeDTO
 {
-    internal class DatVeDTO
-    {
-    }
+    public int MaVe { get; set; }
+    public int? MaKh { get; set; }
+    public DateTime NgayMua { get; set; }
+    public decimal TongTien { get; set; }
+    public List<ChonGheDTO> ChonGhe { get; set; }
 }

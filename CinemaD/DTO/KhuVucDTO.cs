@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace CinemaD.DTO
+public class KhuVucDTO
 {
-    internal class KhuVucDTO
-    {
-    }
+    public int MaKhuVuc { get; set; }
+    public string TenKhuVuc { get; set; }
+    public List<KhachHangDTO> KhachHang { get; set; }
 }

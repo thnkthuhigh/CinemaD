@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using CinemaD.UI;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CinemaD.UI
+namespace CinemaD
 {
     public partial class MDIParent : Form
     {
@@ -21,22 +16,30 @@ namespace CinemaD.UI
 
         private void ShowNewForm(object sender, EventArgs e)
         {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "Window " + childFormNumber++;
-            childForm.Show();
+            MoMotFormCon<Form1>();
         }
+
+
+
+        private void MoMotFormCon<T>()
+        {
+            Form form = MdiChildren.FirstOrDefault(f => f.GetType() == typeof(T));
+            if (form == null)
+            {
+                form = Activator.CreateInstance(typeof(T)) as Form;
+                form.MdiParent = this;
+                form.Show();
+            }
+            form.Activate();
+        }
+
+
 
         private void OpenFile(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = openFileDialog.FileName;
-            }
+            MoMotFormCon<Form2>();
         }
+
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -66,15 +69,9 @@ namespace CinemaD.UI
         {
         }
 
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
-        }
 
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
-        }
+
+
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -103,5 +100,7 @@ namespace CinemaD.UI
                 childForm.Close();
             }
         }
+
+
     }
 }

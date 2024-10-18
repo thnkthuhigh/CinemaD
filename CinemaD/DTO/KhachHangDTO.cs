@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace CinemaD.DTO
+public class KhachHangDTO
 {
-    internal class KhachHangDTO
-    {
-    }
+    public int MaKh { get; set; }
+    public string TenKH { get; set; }
+    public string GioiTinh { get; set; }
+    public string SDT { get; set; }
+    public int? MaKhuVuc { get; set; }
+    public List<DatVeDTO> DatVe { get; set; }
 }
